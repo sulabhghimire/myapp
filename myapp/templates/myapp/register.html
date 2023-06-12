@@ -1,0 +1,16 @@
+<html>
+    <head>Login</head>
+    <body>
+        <form method="POST" enctype="multipart/form-data" >
+            {% csrf_token %}
+            <fieldset>
+                <legend>Register</legend>
+                {{ form }}
+                {{ form2 }}
+                <div>
+                    <button type="Submit"> JOin Now</button>
+                </div>
+            </fieldset>
+        </form>
+    </body>
+</html>

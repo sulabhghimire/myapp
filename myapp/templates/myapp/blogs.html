@@ -1,0 +1,24 @@
+<html>
+    <body>
+        <h1> Blogs</h1>
+        <ul>
+        {% if user.is_authenticated %}
+           <li><a href="{% url 'logout' %}">LogOut</a> </li> 
+        {% else %}
+           <li><a href="{% url 'register' %}">SignUp</a> </li>
+           <li><a href="{% url 'login' %}">LogIn</a> </li>
+        {% endif %}   
+        </ul> 
+        {% for post in posts %}
+        Title : {{post.title}}
+        <br>
+        Author : {{post.user.username}}
+        <br>
+        Created At: {{post.created_at}}
+        <br>
+        Content : {{post.content}}
+        <br><br>
+
+        {% endfor %}
+    </body>
+</html>
